@@ -1,16 +1,45 @@
-2xCali Premium Redesign
+2xCali Premium Artist Website - V3
 
-UPLOAD TO GITHUB:
-Upload the CONTENTS of this folder to the root of the repo, not the folder itself.
+WHAT CHANGED
+- Completely rebuilt layout with clean, readable HTML instead of one-line code.
+- Kept the rotating top banner with: Official Videos / Tour Dates / New Releases / Booking Available.
+- Added your Elfsight Instagram Feed code into index.html and media.html.
+- Changed image paths from assets/images/ to images/.
+- Rebuilt the YouTube page using the uploads/videos link you provided.
+- Added responsive mobile navigation.
 
-IMAGES:
-Put official artist images in /images or update CSS URLs to /assets/images if you prefer.
-Current expected hero paths in the code are:
-images/2xcali-hero.jpg
-images/2xcali-portrait.jpg
-images/gallery-1.jpg
+IMAGE FOLDER
+Put all artist photos inside the root images folder:
 
-IMPORTANT LIVE FEEDS:
-Instagram does not allow a true auto-updating profile feed on a static website without an authorized Instagram API token or a third-party widget. Use Elfsight, LightWidget, SociableKIT, or Meta Instagram Basic Display API and paste the widget code in media.html where it says LIVE INSTAGRAM FEED READY.
+images/hero.jpg
+images/portrait.jpg
+images/story.jpg
+images/release.jpg
+images/photo-1.jpg
+images/photo-2.jpg
+images/photo-3.jpg
+images/photo-4.jpg
 
-YouTube handle-based embeds can be blocked by YouTube. If it does not show, replace the iframe in media.html with the official Uploads Playlist embed from YouTube Studio/channel source.
+If your photos have different filenames, either rename them to the names above or update the paths in the HTML/CSS.
+
+YOUTUBE NOTE
+The site includes the official videos link:
+https://www.youtube.com/@official2xcali1502/videos
+
+The videos page uses this embed:
+https://www.youtube.com/embed?listType=user_uploads&list=official2xcali1502
+
+If YouTube blocks it because the channel only has a handle and no legacy username, you will need the channel's Uploads Playlist ID and replace the iframe src with:
+https://www.youtube.com/embed/videoseries?list=UPLOADS_PLAYLIST_ID
+
+GITHUB PAGES
+Upload these files to the root of the GitHub repo:
+index.html
+music.html
+videos.html
+shows.html
+media.html
+booking.html
+css/
+js/
+images/
