@@ -8,6 +8,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .music-video-frame {
+      position: relative;
+      width: 100%;
+      min-height: 520px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+    }
+
+    .music-video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 900px) {
+      .music-video-frame {
+        min-height: 360px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="top-ticker"><div class="ticker-track"><span>Official Videos</span><span>Tour Dates</span><span>New Releases</span><span>Booking Available</span><span>2xCali Official</span><span>Official Videos</span><span>Tour Dates</span><span>New Releases</span><span>Booking Available</span><span>2xCali Official</span></div></div>
@@ -23,8 +49,13 @@
     <section class="section">
       <div class="grid-2">
         <article class="embed-card">
-          <div class="video-frame">
-            <iframe style="border-radius:28px" src="https://open.spotify.com/embed/artist/7C4UHpyOzX5Bt34fuuVkRr?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <div class="music-video-frame">
+            <iframe 
+              src="https://www.youtube.com/embed/videoseries?list=UUxMlP2ej23_o5Yg48VudG0w"
+              title="2xCali Official Videos"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
           </div>
         </article>
 
