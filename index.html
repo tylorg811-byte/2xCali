@@ -212,11 +212,36 @@ const CLIENT_USER_ID = "6d2f86e1-6ac9-42c8-bb74-827dea355a23";
 async function trackExternalPageView(){
   await analyticsDb.from("site_analytics_events").insert({
     client_user_id: CLIENT_USER_ID,
-    page: document.title || window.location.pathname,
+    page: PAGE_NAME,
     path: window.location.pathname + window.location.search,
     referrer: document.referrer || "direct",
     device: getDeviceType(),
     browser: getBrowser()
+  });
+}
+
+function setupExternalLeadTracking(){
+  const forms = document.querySelectorAll("form");
+
+  forms.forEach((form,index)=>{
+    if(form.dataset.leadTrackingAttached === "true") return;
+
+    form.dataset.leadTrackingAttached = "true";
+
+    form.addEventListener("submit", async ()=>{
+      const formName =
+        form.getAttribute("name") ||
+        form.getAttribute("id") ||
+        form.dataset.formName ||
+        `Website Form ${index + 1}`;
+
+      await analyticsDb.from("site_leads").insert({
+        client_user_id: CLIENT_USER_ID,
+        page: PAGE_NAME,
+        form_name: formName,
+        source: document.referrer || "direct"
+      });
+    });
   });
 }
 
@@ -228,6 +253,7 @@ function getDeviceType(){
   if(/ipad|tablet|android(?!.*mobile)/.test(ua)) return "tablet";
   if(width <= 700) return "mobile";
   if(width <= 1100) return "tablet";
+
   return "desktop";
 }
 
@@ -238,10 +264,12 @@ function getBrowser(){
   if(ua.includes("Chrome")) return "Chrome";
   if(ua.includes("Safari") && !ua.includes("Chrome")) return "Safari";
   if(ua.includes("Firefox")) return "Firefox";
+
   return "Other";
 }
 
 trackExternalPageView();
+setupExternalLeadTracking();
 </script>
 </body>
 </html>
