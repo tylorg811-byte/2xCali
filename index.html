@@ -199,5 +199,49 @@
   </footer>
 
   <script src="js/script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://ujxuirmeikbzakqaerec.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_gLnNGeQUUbjLoQlN5g2t9g_XXQpy9P3";
+const analyticsDb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+const CLIENT_USER_ID = "c25bdbac-6257-42d2-b261-be99045c75cf";
+
+async function trackExternalPageView(){
+  await analyticsDb.from("site_analytics_events").insert({
+    client_user_id: CLIENT_USER_ID,
+    page: document.title || window.location.pathname,
+    path: window.location.pathname + window.location.search,
+    referrer: document.referrer || "direct",
+    device: getDeviceType(),
+    browser: getBrowser()
+  });
+}
+
+function getDeviceType(){
+  const width = window.innerWidth;
+  const ua = navigator.userAgent.toLowerCase();
+
+  if(/iphone|android.*mobile|windows phone/.test(ua)) return "mobile";
+  if(/ipad|tablet|android(?!.*mobile)/.test(ua)) return "tablet";
+  if(width <= 700) return "mobile";
+  if(width <= 1100) return "tablet";
+  return "desktop";
+}
+
+function getBrowser(){
+  const ua = navigator.userAgent;
+
+  if(ua.includes("Edg")) return "Edge";
+  if(ua.includes("Chrome")) return "Chrome";
+  if(ua.includes("Safari") && !ua.includes("Chrome")) return "Safari";
+  if(ua.includes("Firefox")) return "Firefox";
+  return "Other";
+}
+
+trackExternalPageView();
+</script>
 </body>
 </html>
