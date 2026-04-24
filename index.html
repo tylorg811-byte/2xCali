@@ -200,15 +200,15 @@
 
   <script src="js/script.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const SUPABASE_URL = "https://ujxuirmeikbzakqaerec.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_gLnNGeQUUbjLoQlN5g2t9g_XXQpy9P3";
 const analyticsDb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 const CLIENT_USER_ID = "6d2f86e1-6ac9-42c8-bb74-827dea355a23";
-
+const PAGE_NAME = document.title || window.location.pathname;
+  
 async function trackExternalPageView(){
   await analyticsDb.from("site_analytics_events").insert({
     client_user_id: CLIENT_USER_ID,
