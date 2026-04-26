@@ -210,17 +210,48 @@ const SUPABASE_URL = "https://ujxuirmeikbzakqaerec.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_gLnNGeQUUbjLoQlN5g2t9g_XXQpy9P3";
 const analyticsDb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+let cachedVisitorLocation = null;
+async function getVisitorLocation(){
+  if(cachedVisitorLocation) return cachedVisitorLocation;
+
+  const fallback = {
+    visitor_country:"",
+    visitor_region:"",
+    visitor_timezone:Intl.DateTimeFormat().resolvedOptions().timeZone || ""
+  };
+
+  try{
+    const res = await fetch("https://ipapi.co/json/");
+    const data = await res.json();
+
+    cachedVisitorLocation = {
+      visitor_country:data.country_name || "",
+      visitor_region:data.region || "",
+      visitor_timezone:data.timezone || fallback.visitor_timezone
+    };
+
+    return cachedVisitorLocation;
+  }catch(e){
+    cachedVisitorLocation = fallback;
+    return cachedVisitorLocation;
+  }
+}
+
 const CLIENT_USER_ID = "6d2f86e1-6ac9-42c8-bb74-827dea355a23";
 const PAGE_NAME = document.title || window.location.pathname;
   
 async function trackExternalPageView(){
+  const visitorLocation = await getVisitorLocation();
   await analyticsDb.from("site_analytics_events").insert({
     client_user_id: CLIENT_USER_ID,
     page: PAGE_NAME,
     path: window.location.pathname + window.location.search,
     referrer: document.referrer || "direct",
     device: getDeviceType(),
-    browser: getBrowser()
+    browser: getBrowser(),
+    visitor_country:visitorLocation.visitor_country,
+    visitor_region:visitorLocation.visitor_region,
+    visitor_timezone:visitorLocation.visitor_timezone
   });
 }
 
@@ -233,6 +264,7 @@ function setupExternalLeadTracking(){
     form.dataset.leadTrackingAttached = "true";
 
     form.addEventListener("submit", async ()=>{
+      const visitorLocation = await getVisitorLocation();
       const formName =
         form.getAttribute("name") ||
         form.getAttribute("id") ||
@@ -243,7 +275,10 @@ function setupExternalLeadTracking(){
         client_user_id: CLIENT_USER_ID,
         page: PAGE_NAME,
         form_name: formName,
-        source: document.referrer || "direct"
+        source: document.referrer || "direct",
+        visitor_country:visitorLocation.visitor_country,
+        visitor_region:visitorLocation.visitor_region,
+        visitor_timezone:visitorLocation.visitor_timezone
       });
     });
   });
