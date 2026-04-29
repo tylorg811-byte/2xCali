@@ -3,231 +3,706 @@
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Shop 2xCali | Official Drops</title>
+  <title>Shop 2xCali | Official Drops & Work With 2xCali</title>
+  <meta name="description" content="Shop official 2xCali music, merch, fan packs, exclusive drops, features, hooks, verses, songwriting, and studio coaching.">
 
-  <meta name="description" content="Shop official 2xCali music, merch, and exclusive drops.">
-
-  <meta property="og:title" content="Shop 2xCali">
-  <meta property="og:description" content="Official 2xCali music, merch, and fan drops.">
+  <meta property="og:title" content="Shop 2xCali | Official Drops">
+  <meta property="og:description" content="Official 2xCali drops, music, merch, fan packs, and Work With 2xCali services.">
   <meta property="og:image" content="https://2xcali.com/images/hero.jpg">
   <meta property="og:url" content="https://2xcali.com/shop.html">
   <meta property="og:type" content="website">
+  <meta property="fb:app_id" content="123456789012345">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
-    .drop-alert {
-      padding: 18px;
-      margin-bottom: 24px;
-      border-radius: 16px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.12);
+    .shop-hero .hero-card-inner {
+      min-height: 340px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .shop-badge-row {
+      display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-top: 18px;
     }
 
-    .drop-feature {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 40px;
+    .drop-alert {
+      margin-bottom: 28px;
+      padding: 18px 22px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 22px;
+      background: rgba(255,255,255,.055);
+      display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
-    .drop-feature-img {
-      height: 300px;
-      border-radius: 16px;
-      background: url("images/hero.jpg") center/cover;
+    .drop-alert span {
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      opacity: .78;
+    }
+
+    .drop-alert strong {
+      font-size: 1.1rem;
+    }
+
+    .drop-alert p {
+      opacity: .7;
+    }
+
+    .drop-feature-card {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: center;
+      padding: 34px;
+      margin-bottom: 30px;
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,.14);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.09), rgba(255,255,255,.035)),
+        radial-gradient(circle at top right, rgba(255,255,255,.08), transparent 35%);
+    }
+
+    .drop-feature-card h2 {
+      margin: 10px 0 18px;
+    }
+
+    .drop-feature-card p {
+      max-width: 620px;
+      opacity: .76;
+      line-height: 1.8;
+    }
+
+    .drop-feature-visual {
+      min-height: 360px;
+      border-radius: 26px;
+      background:
+        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.72)),
+        url("images/hero.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+      box-shadow: inset 0 0 80px rgba(0,0,0,.5);
+    }
+
+    .drop-feature-visual span {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 3rem;
+      letter-spacing: .04em;
     }
 
     .drop-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
     }
 
-    .drop-card {
-      padding: 20px;
-      border-radius: 16px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.1);
-      transition: .2s;
+    .drop-item {
+      position: relative;
+      padding: 16px;
+      border-radius: 26px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.12);
+      transition: .25s ease;
     }
 
-    .drop-card:hover {
+    .drop-item:hover {
       transform: translateY(-6px);
+      border-color: rgba(255,255,255,.28);
     }
 
-    .drop-card img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 12px;
+    .drop-label {
+      position: absolute;
+      top: 26px;
+      left: 26px;
+      z-index: 2;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.7);
+      font-size: .72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .06em;
     }
 
-    .drop-card h3 {
-      margin-bottom: 8px;
+    .drop-img {
+      height: 210px;
+      margin-bottom: 18px;
+      border-radius: 20px;
+      background:
+        linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.68)),
+        url("images/hero.jpg");
+      background-size: cover;
+      background-position: center;
     }
 
-    .drop-card p {
-      opacity: .7;
+    .drop-img.merch {
+      background-image:
+        linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.68)),
+        url("images/media1.jpg");
+    }
+
+    .drop-img.hoodie {
+      background-image:
+        linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.68)),
+        url("images/media2.jpg");
+    }
+
+    .drop-img.bundle {
+      background-image:
+        linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.68)),
+        url("images/media3.jpg");
+    }
+
+    .drop-img.single {
+      background-image:
+        linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.68)),
+        url("images/media4.jpg");
+    }
+
+    .drop-item h3 {
       margin-bottom: 10px;
     }
 
-    .drop-card strong {
+    .drop-item p {
+      opacity: .72;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .drop-item strong {
       display: block;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      font-size: 1.1rem;
     }
 
-    @media(max-width:900px){
-      .drop-grid {grid-template-columns:1fr 1fr;}
-      .drop-feature {grid-template-columns:1fr;}
+    .work-card {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+      align-items: stretch;
     }
 
-    @media(max-width:600px){
-      .drop-grid {grid-template-columns:1fr;}
+    .work-panel {
+      padding: 34px;
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,.14);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.03)),
+        radial-gradient(circle at top left, rgba(0,102,255,.18), transparent 34%);
+    }
+
+    .work-panel h2 {
+      margin: 10px 0 18px;
+    }
+
+    .work-panel p {
+      opacity: .78;
+      line-height: 1.8;
+    }
+
+    .work-prices {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .work-prices div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .work-prices strong {
+      font-size: 1.4rem;
+    }
+
+    .work-prices span {
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .work-card .hero-card-inner {
+      min-height: 100%;
+      justify-content: flex-end;
+    }
+
+    .final-shop-card {
+      text-align: center;
+      padding: 42px 24px;
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+    }
+
+    .final-shop-card h2 {
+      margin: 10px 0 16px;
+    }
+
+    .final-shop-card p {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      opacity: .76;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 900px) {
+      .drop-feature-card,
+      .work-card {
+        grid-template-columns: 1fr;
+      }
+
+      .drop-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .drop-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .drop-feature-card,
+      .work-panel {
+        padding: 24px;
+      }
+
+      .drop-feature-visual {
+        min-height: 280px;
+      }
+
+      .work-prices div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
     }
   </style>
 </head>
 
 <body>
-
-<div class="top-ticker">
-  <div class="ticker-track">
-    <span>Official Drops</span>
-    <span>Limited Releases</span>
-    <span>Music + Merch</span>
-    <span>2xCali</span>
-  </div>
-</div>
-
-<header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand" href="index.html">
-      <span class="brand-main">2xCali</span>
-      <span class="brand-sub">Official</span>
-    </a>
-
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="music.html">Music</a>
-      <a href="videos.html">Videos</a>
-      <a href="shows.html">Shows</a>
-      <a href="media.html">Media</a>
-      <a href="shop.html">Shop</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-<section class="hero">
-  <div class="hero-copy">
-    <span class="eyebrow">Official Drops</span>
-    <h1>Shop 2xCali <span>Movement</span></h1>
-    <p>Own the sound. Wear the movement. Official music, merch, and exclusive drops.</p>
-
-    <div class="hero-actions">
-      <a class="btn" href="#drops">Shop Now</a>
+  <div class="top-ticker">
+    <div class="ticker-track">
+      <span>Official Drops</span>
+      <span>Music + Merch</span>
+      <span>Work With 2xCali</span>
+      <span>Features Available</span>
+      <span>2xCali Official</span>
+      <span>Official Drops</span>
+      <span>Music + Merch</span>
+      <span>Work With 2xCali</span>
+      <span>Features Available</span>
+      <span>2xCali Official</span>
     </div>
   </div>
 
-  <aside class="hero-card">
-    <div class="hero-card-inner">
-      <span class="eyebrow">Live Now</span>
-      <h3>Drop 001</h3>
-      <p>Limited release. Direct support only.</p>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="2xCali home">
+        <span class="brand-main">2xCali</span>
+        <span class="brand-sub">Official</span>
+      </a>
+
+      <button class="menu-btn" aria-label="Open navigation">☰</button>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="music.html">Music</a>
+        <a href="videos.html">Videos</a>
+        <a href="shows.html">Shows</a>
+        <a href="media.html">Media</a>
+        <a href="shop.html">Shop</a>
+        <a href="mailto:calimusic4l@gmail.com" class="nav-cta">Book 2xCali</a>
+      </nav>
     </div>
-  </aside>
-</section>
+  </header>
 
-<section class="section" id="drops">
+  <main>
+    <section class="hero shop-hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Official Artist Shop</span>
+        <h1>Shop 2xCali <span>Drops</span></h1>
+        <p>
+          Own the sound. Wear the movement. Shop official music, merch, fan packs,
+          and book direct work with 2xCali.
+        </p>
 
-  <div class="drop-alert">
-    <span>LIMITED DROP</span>
-    <strong>Available Now</strong>
-  </div>
+        <div class="hero-actions">
+          <a class="btn" href="#drops">Shop Drop</a>
+          <a class="btn secondary" href="#work-with-2xcali">Work with 2xCali</a>
+          <a class="btn secondary" href="#fanpack">Fan Pack</a>
+        </div>
+      </div>
 
-  <div class="drop-feature">
-    <div>
-      <span class="eyebrow">Featured</span>
-      <h2>Fan Pack</h2>
-      <p>Album + merch bundle for real supporters.</p>
+      <aside class="hero-card">
+        <div class="hero-card-inner">
+          <span class="eyebrow">Drop 001</span>
+          <h3>Limited Release. Direct Support.</h3>
+          <p>
+            Digital music, official merch, bundles, features, hooks, verses, and artist services.
+          </p>
 
-      <a class="btn" href="#">Get Fan Pack</a>
+          <div class="shop-badge-row">
+            <span class="pill">Music</span>
+            <span class="pill">Merch</span>
+            <span class="pill">Bundles</span>
+            <span class="pill">Features</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="drops">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Official Drop</span>
+          <h2>2xCali Drop 001</h2>
+        </div>
+        <p class="section-lead">
+          Limited music, merch, and fan packs for the ones supporting the movement directly.
+        </p>
+      </div>
+
+      <div class="drop-alert">
+        <span>Limited Release</span>
+        <strong>Drop is live now</strong>
+        <p>Once this run is gone, it may not come back.</p>
+      </div>
+
+      <div class="drop-feature-card" id="fanpack">
+        <div>
+          <span class="eyebrow">Featured Fan Pack</span>
+          <h2>Own the Sound.<br><span>Wear the Movement.</span></h2>
+          <p>
+            The full 2xCali experience: digital music download, exclusive fan files,
+            and official merch bundled into one drop.
+          </p>
+
+          <div class="card-actions">
+            <a class="btn" href="#" target="_blank" rel="noopener">Get Fan Pack</a>
+            <a class="btn secondary" href="#drop-items">View Items</a>
+          </div>
+        </div>
+
+        <div class="drop-feature-visual">
+          <span>Fan Pack</span>
+        </div>
+      </div>
+
+      <div class="drop-grid" id="drop-items">
+        <article class="drop-item">
+          <span class="drop-label">Digital</span>
+          <div class="drop-img"></div>
+          <h3>Digital Album</h3>
+          <p>Full album download with cover art and exclusive bonus files.</p>
+          <strong>$9.99</strong>
+          <a class="pill" href="#" target="_blank" rel="noopener">Buy Album</a>
+        </article>
+
+        <article class="drop-item">
+          <span class="drop-label">Merch</span>
+          <div class="drop-img merch"></div>
+          <h3>Official Tee</h3>
+          <p>Clean 2xCali tee made for this drop era.</p>
+          <strong>$29.99</strong>
+          <a class="pill" href="#" target="_blank" rel="noopener">Shop Tee</a>
+        </article>
+
+        <article class="drop-item">
+          <span class="drop-label">Exclusive</span>
+          <div class="drop-img hoodie"></div>
+          <h3>2xCali Hoodie</h3>
+          <p>Premium hoodie for fans locked into the movement.</p>
+          <strong>$49.99</strong>
+          <a class="pill" href="#" target="_blank" rel="noopener">Shop Hoodie</a>
+        </article>
+
+        <article class="drop-item">
+          <span class="drop-label">Bundle</span>
+          <div class="drop-img bundle"></div>
+          <h3>Deluxe Fan Pack</h3>
+          <p>Music download plus official merch in one direct-support bundle.</p>
+          <strong>$59.99</strong>
+          <a class="pill" href="#" target="_blank" rel="noopener">Get Bundle</a>
+        </article>
+
+        <article class="drop-item">
+          <span class="drop-label">Track</span>
+          <div class="drop-img single"></div>
+          <h3>Exclusive Single</h3>
+          <p>Buy the track directly and support 2xCali beyond streaming.</p>
+          <strong>$2.99</strong>
+          <a class="pill" href="#" target="_blank" rel="noopener">Buy Track</a>
+        </article>
+
+        <article class="drop-item">
+          <span class="drop-label">Digital</span>
+          <div class="drop-img"></div>
+          <h3>Deluxe Music Pack</h3>
+          <p>Album, bonus track, cover art, and exclusive digital content.</p>
+          <strong>$14.99</strong>
+          <a class="pill" href="#" target="_blank" rel="noopener">Buy Deluxe</a>
+        </article>
+
+        <article class="drop-item">
+          <span class="drop-label">Merch</span>
+          <div class="drop-img merch"></div>
+          <h3>Logo Poster</h3>
+          <p>Official visual piece for fans who want the drop on the wall.</p>
+          <strong>$19.99</strong>
+          <a class="pill" href="#" target="_blank" rel="noopener">Shop Poster</a>
+        </article>
+
+        <article class="drop-item">
+          <span class="drop-label">Merch</span>
+          <div class="drop-img hoodie"></div>
+          <h3>2xCali Cap</h3>
+          <p>Simple official cap made to match the current drop.</p>
+          <strong>$24.99</strong>
+          <a class="pill" href="#" target="_blank" rel="noopener">Shop Cap</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="work-with-2xcali">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Work With 2xCali</span>
+          <h2>Features, Hooks & Studio Work</h2>
+        </div>
+        <p class="section-lead">
+          Book 2xCali for verses, hooks, songwriting, studio coaching, and custom artist work.
+        </p>
+      </div>
+
+      <div class="work-card">
+        <div class="work-panel">
+          <span class="eyebrow">Artist Services</span>
+          <h2>Bring 2xCali Into Your Record</h2>
+
+          <p>
+            Need a hook, verse, songwriting help, or studio coaching? Lock in directly
+            and get serious work from 2xCali.
+          </p>
+
+          <div class="work-prices">
+            <div>
+              <strong>$150</strong>
+              <span>Studio Coaching</span>
+            </div>
+
+            <div>
+              <strong>$200</strong>
+              <span>Hooks</span>
+            </div>
+
+            <div>
+              <strong>$350</strong>
+              <span>8 Bar Verse</span>
+            </div>
+
+            <div>
+              <strong>$400</strong>
+              <span>16 Bar Verse</span>
+            </div>
+
+            <div>
+              <strong>$500</strong>
+              <span>Songwriting</span>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <a class="btn" href="mailto:calimusic4l@gmail.com?subject=Work%20With%202xCali">Book Service</a>
+            <a class="btn secondary" href="mailto:calimusic4l@gmail.com?subject=2xCali%20Feature%20Inquiry">Ask Availability</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-inner">
+            <span class="eyebrow">Feature Work</span>
+            <h3>Serious Artists Only</h3>
+            <p>
+              Hooks, verses, coaching, and songwriting for artists ready to level up their sound.
+            </p>
+
+            <div class="shop-badge-row">
+              <span class="pill">Hooks</span>
+              <span class="pill">Verses</span>
+              <span class="pill">Coaching</span>
+              <span class="pill">Writing</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="final-shop-card">
+        <span class="eyebrow">Direct Support</span>
+        <h2>Buy Direct. Work Direct. Support Direct.</h2>
+        <p>
+          Every purchase and booking helps push the 2xCali movement forward —
+          from music and visuals to shows, releases, and the next drop.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#drops">Shop Drop</a>
+          <a class="btn secondary" href="#work-with-2xcali">Work with 2xCali</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="brand">
+        <span class="brand-main">2xCali</span>
+        <span class="brand-sub">Official Artist Website</span>
+      </div>
+
+      <div class="socials">
+        <a class="pill" href="https://www.instagram.com/2xcali" target="_blank" rel="noopener">Instagram</a>
+        <a class="pill" href="https://www.youtube.com/@official2xcali1502/videos" target="_blank" rel="noopener">YouTube</a>
+        <a class="pill" href="https://open.spotify.com/artist/7C4UHpyOzX5Bt34fuuVkRr" target="_blank" rel="noopener">Spotify</a>
+        <a class="pill" href="https://music.apple.com/us/artist/2xcali/1384316539" target="_blank" rel="noopener">Apple Music</a>
+      </div>
     </div>
+  </footer>
 
-    <div class="drop-feature-img"></div>
-  </div>
+  <script src="js/script.js"></script>
 
-  <div class="drop-grid">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+  const SUPABASE_URL = "https://ujxuirmeikbzakqaerec.supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_gLnNGeQUUbjLoQlN5g2t9g_XXQpy9P3";
+  const analyticsDb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    <div class="drop-card">
-      <img src="images/hero.jpg">
-      <h3>Digital Album</h3>
-      <p>Full album download.</p>
-      <strong>$9.99</strong>
-      <a class="pill" href="#">Buy</a>
-    </div>
+  let cachedVisitorLocation = null;
 
-    <div class="drop-card">
-      <img src="images/media1.jpg">
-      <h3>2xCali Tee</h3>
-      <p>Official merch.</p>
-      <strong>$29.99</strong>
-      <a class="pill" href="#">Shop</a>
-    </div>
+  async function getVisitorLocation(){
+    if(cachedVisitorLocation) return cachedVisitorLocation;
 
-    <div class="drop-card">
-      <img src="images/media2.jpg">
-      <h3>Hoodie</h3>
-      <p>Premium drop hoodie.</p>
-      <strong>$49.99</strong>
-      <a class="pill" href="#">Shop</a>
-    </div>
+    const fallback = {
+      visitor_country:"",
+      visitor_region:"",
+      visitor_timezone:Intl.DateTimeFormat().resolvedOptions().timeZone || ""
+    };
 
-    <div class="drop-card">
-      <img src="images/media3.jpg">
-      <h3>Single</h3>
-      <p>Exclusive track.</p>
-      <strong>$2.99</strong>
-      <a class="pill" href="#">Buy</a>
-    </div>
+    try{
+      const res = await fetch("https://ipapi.co/json/");
+      const data = await res.json();
 
-    <div class="drop-card">
-      <img src="images/media2.jpg">
-      <h3>Deluxe Pack</h3>
-      <p>Bonus music + extras.</p>
-      <strong>$14.99</strong>
-      <a class="pill" href="#">Buy</a>
-    </div>
+      cachedVisitorLocation = {
+        visitor_country:data.country_name || "",
+        visitor_region:data.region || "",
+        visitor_timezone:data.timezone || fallback.visitor_timezone
+      };
 
-    <div class="drop-card">
-      <img src="images/media1.jpg">
-      <h3>Bundle</h3>
-      <p>Music + merch.</p>
-      <strong>$59.99</strong>
-      <a class="pill" href="#">Get</a>
-    </div>
+      return cachedVisitorLocation;
+    }catch(e){
+      cachedVisitorLocation = fallback;
+      return cachedVisitorLocation;
+    }
+  }
 
-  </div>
+  const CLIENT_USER_ID = "6d2f86e1-6ac9-42c8-bb74-827dea355a23";
+  const PAGE_NAME = document.title || window.location.pathname;
 
-</section>
+  async function trackExternalPageView(){
+    const visitorLocation = await getVisitorLocation();
 
-</main>
+    await analyticsDb.from("site_analytics_events").insert({
+      client_user_id: CLIENT_USER_ID,
+      page: PAGE_NAME,
+      path: window.location.pathname + window.location.search,
+      referrer: document.referrer || "direct",
+      device: getDeviceType(),
+      browser: getBrowser(),
+      visitor_country:visitorLocation.visitor_country,
+      visitor_region:visitorLocation.visitor_region,
+      visitor_timezone:visitorLocation.visitor_timezone
+    });
+  }
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="brand">
-      <span class="brand-main">2xCali</span>
-      <span class="brand-sub">Official</span>
-    </div>
-  </div>
-</footer>
+  function setupExternalLeadTracking(){
+    const forms = document.querySelectorAll("form");
 
+    forms.forEach((form,index)=>{
+      if(form.dataset.leadTrackingAttached === "true") return;
+
+      form.dataset.leadTrackingAttached = "true";
+
+      form.addEventListener("submit", async ()=>{
+        const visitorLocation = await getVisitorLocation();
+
+        const formName =
+          form.getAttribute("name") ||
+          form.getAttribute("id") ||
+          form.dataset.formName ||
+          `Website Form ${index + 1}`;
+
+        await analyticsDb.from("site_leads").insert({
+          client_user_id: CLIENT_USER_ID,
+          page: PAGE_NAME,
+          form_name: formName,
+          source: document.referrer || "direct",
+          visitor_country:visitorLocation.visitor_country,
+          visitor_region:visitorLocation.visitor_region,
+          visitor_timezone:visitorLocation.visitor_timezone
+        });
+      });
+    });
+  }
+
+  function getDeviceType(){
+    const width = window.innerWidth;
+    const ua = navigator.userAgent.toLowerCase();
+
+    if(/iphone|android.*mobile|windows phone/.test(ua)) return "mobile";
+    if(/ipad|tablet|android(?!.*mobile)/.test(ua)) return "tablet";
+    if(width <= 700) return "mobile";
+    if(width <= 1100) return "tablet";
+
+    return "desktop";
+  }
+
+  function getBrowser(){
+    const ua = navigator.userAgent;
+
+    if(ua.includes("Edg")) return "Edge";
+    if(ua.includes("Chrome")) return "Chrome";
+    if(ua.includes("Safari") && !ua.includes("Chrome")) return "Safari";
+    if(ua.includes("Firefox")) return "Firefox";
+
+    return "Other";
+  }
+
+  trackExternalPageView();
+  setupExternalLeadTracking();
+  </script>
 </body>
 </html>
