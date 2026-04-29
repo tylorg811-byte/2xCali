@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shop 2xCali | Official Music & Merch</title>
+  <meta name="description" content="Shop official 2xCali music, albums, digital downloads, merch, fan packs, and exclusive drops.">
+
+  <meta property="og:title" content="Shop 2xCali | Official Music & Merch">
+  <meta property="og:description" content="Official 2xCali shop for music, merch, fan packs, and exclusive drops.">
+  <meta property="og:image" content="https://2xcali.com/images/hero.jpg">
+  <meta property="og:url" content="https://2xcali.com/shop.html">
+  <meta property="og:type" content="website">
+  <meta property="fb:app_id" content="123456789012345">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .shop-hero .hero-card-inner {
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .shop-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .shop-drop-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shop-drop-card::before {
+      content: "";
+      display: block;
+      height: 190px;
+      margin: -1px -1px 22px;
+      background:
+        linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.72)),
+        url("images/hero.jpg");
+      background-size: cover;
+      background-position: center;
+      border-radius: inherit;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .shop-drop-card.music::before {
+      background:
+        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.74)),
+        url("images/hero.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .shop-drop-card.merch::before {
+      background:
+        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.74)),
+        url("images/media1.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .shop-drop-card.bundle::before {
+      background:
+        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.74)),
+        url("images/media2.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .shop-drop-card.single::before {
+      background:
+        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.74)),
+        url("images/media3.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .shop-price {
+      display: block;
+      margin: 14px 0;
+      font-weight: 900;
+      font-size: 1.05rem;
+    }
+
+    .shop-feature {
+      align-items: center;
+    }
+
+    .shop-feature .split-img {
+      min-height: 520px;
+    }
+
+    .shop-note {
+      margin-top: 18px;
+      opacity: .75;
+      font-size: .95rem;
+    }
+
+    @media (max-width: 700px) {
+      .shop-drop-card::before {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-ticker">
+    <div class="ticker-track">
+      <span>Official Merch</span>
+      <span>Digital Albums</span>
+      <span>Exclusive Drops</span>
+      <span>Fan Packs</span>
+      <span>2xCali Official</span>
+      <span>Official Merch</span>
+      <span>Digital Albums</span>
+      <span>Exclusive Drops</span>
+      <span>Fan Packs</span>
+      <span>2xCali Official</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="2xCali home">
+        <span class="brand-main">2xCali</span>
+        <span class="brand-sub">Official</span>
+      </a>
+
+      <button class="menu-btn" aria-label="Open navigation">☰</button>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="music.html">Music</a>
+        <a href="videos.html">Videos</a>
+        <a href="shows.html">Shows</a>
+        <a href="media.html">Media</a>
+        <a href="shop.html">Shop</a>
+        <a href="mailto:calimusic4l@gmail.com" class="nav-cta">Book 2xCali</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero shop-hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Official Artist Shop</span>
+        <h1>Shop 2xCali <span>Drops</span></h1>
+        <p>
+          Official music, digital albums, merch, fan packs, and exclusive drops —
+          built for fans who want to support the movement directly.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#drops">Shop Drops</a>
+          <a class="btn secondary" href="#music">Buy Music</a>
+          <a class="btn secondary" href="#fanpack">Fan Pack</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-inner">
+          <span class="eyebrow">Music + Merch</span>
+          <h3>Own the sound. Wear the movement.</h3>
+          <p>
+            Digital releases, exclusive fan items, and official 2xCali merch in one place.
+          </p>
+
+          <div class="shop-badge-row">
+            <span class="pill">Albums</span>
+            <span class="pill">Singles</span>
+            <span class="pill">Merch</span>
+            <span class="pill">Bundles</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="split shop-feature">
+        <div class="split-img"></div>
+
+        <div>
+          <span class="eyebrow">Featured Drop</span>
+          <h2>Music You Can Own.<br><span>Merch You Can Wear.</span></h2>
+
+          <p class="section-lead">
+            This page brings the full 2xCali experience together — songs, albums,
+            official gear, and fan bundles without making the site feel like two
+            separate stores pasted together.
+          </p>
+
+          <p>
+            Fans can stream the catalog, buy the music directly, grab merch, or get
+            a full fan pack that connects the sound with the style.
+          </p>
+
+          <div class="card-actions">
+            <a class="btn" href="#drops">View Drops</a>
+            <a class="btn secondary" href="#music">Buy Music</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="drops">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Official Drops</span>
+          <h2>Shop the Movement</h2>
+        </div>
+        <p class="section-lead">
+          Albums, singles, merch, and bundles all styled as one clean 2xCali shop experience.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="release-card shop-drop-card music" id="music">
+          <h3>Digital Album</h3>
+          <p>Full project download with cover art and exclusive fan files.</p>
+          <span class="shop-price">$9.99</span>
+          <div class="music-links">
+            <a class="pill" href="#" target="_blank" rel="noopener">Buy Album</a>
+          </div>
+        </article>
+
+        <article class="release-card shop-drop-card merch">
+          <h3>Official 2xCali Tee</h3>
+          <p>Clean official merch made for the current 2xCali era.</p>
+          <span class="shop-price">$29.99</span>
+          <div class="music-links">
+            <a class="pill" href="#" target="_blank" rel="noopener">Shop Tee</a>
+          </div>
+        </article>
+
+        <article class="release-card shop-drop-card bundle" id="fanpack">
+          <h3>Fan Pack</h3>
+          <p>Digital album download plus official merch in one fan-focused drop.</p>
+          <span class="shop-price">$59.99</span>
+          <div class="music-links">
+            <a class="pill" href="#" target="_blank" rel="noopener">Get Fan Pack</a>
+          </div>
+        </article>
+
+        <article class="release-card shop-drop-card single">
+          <h3>Exclusive Single</h3>
+          <p>Buy the track directly and support 2xCali beyond streaming.</p>
+          <span class="shop-price">$2.99</span>
+          <div class="music-links">
+            <a class="pill" href="#" target="_blank" rel="noopener">Buy Track</a>
+          </div>
+        </article>
+
+        <article class="release-card shop-drop-card merch">
+          <h3>2xCali Hoodie</h3>
+          <p>Premium official hoodie for fans who want the full look.</p>
+          <span class="shop-price">$49.99</span>
+          <div class="music-links">
+            <a class="pill" href="#" target="_blank" rel="noopener">Shop Hoodie</a>
+          </div>
+        </article>
+
+        <article class="release-card shop-drop-card music">
+          <h3>Deluxe Music Pack</h3>
+          <p>Album, bonus track, cover art, and exclusive digital content.</p>
+          <span class="shop-price">$14.99</span>
+          <div class="music-links">
+            <a class="pill" href="#" target="_blank" rel="noopener">Buy Deluxe</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="shop-note">
+        Replace each <strong>href="#"</strong> with the real Gumroad, Payhip, Shopify, Printful, or store checkout link.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Before You Buy</span>
+          <h2>Stream First</h2>
+        </div>
+        <p class="section-lead">
+          Fans can listen first, then support directly through music downloads, merch, or bundles.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="release-card">
+          <div class="release-art"></div>
+          <h3>Spotify</h3>
+          <p>Stream the latest 2xCali releases and catalog on Spotify.</p>
+          <div class="music-links">
+            <a class="pill" href="https://open.spotify.com/artist/7C4UHpyOzX5Bt34fuuVkRr" target="_blank" rel="noopener">Open Spotify</a>
+          </div>
+        </article>
+
+        <article class="release-card">
+          <div class="release-art"></div>
+          <h3>Apple Music</h3>
+          <p>Listen on Apple Music and add tracks directly to your library.</p>
+          <div class="music-links">
+            <a class="pill" href="https://music.apple.com/us/artist/2xcali/1384316539" target="_blank" rel="noopener">Open Apple Music</a>
+          </div>
+        </article>
+
+        <article class="release-card">
+          <div class="release-art"></div>
+          <h3>YouTube</h3>
+          <p>Watch official videos, shorts, and visual releases.</p>
+          <div class="music-links">
+            <a class="pill" href="https://www.youtube.com/@official2xcali1502/videos" target="_blank" rel="noopener">Open YouTube</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="split">
+        <div>
+          <span class="eyebrow">How It Works</span>
+          <h2>Simple For Fans.<br><span>Easy For The Artist.</span></h2>
+
+          <p class="section-lead">
+            The page looks like one official 2xCali shop, but each button can connect
+            to the right backend checkout.
+          </p>
+
+          <p>
+            Music can go to Gumroad, Payhip, or Shopify Digital Downloads.
+            Merch can go to Printful, Printify, Shopify, Spring, or another print-on-demand setup.
+          </p>
+
+          <p>
+            That means 2xCali does not have to print, package, or ship merch manually —
+            and digital music can be delivered automatically after purchase.
+          </p>
+
+          <div class="card-actions">
+            <a class="btn" href="#drops">Shop Now</a>
+            <a class="btn secondary" href="mailto:calimusic4l@gmail.com">Questions?</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-inner">
+            <span class="eyebrow">Official Support</span>
+            <h3>Buy direct. Support direct.</h3>
+            <p>
+              Every purchase helps push the movement forward — music, visuals,
+              shows, and the next release.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="brand">
+        <span class="brand-main">2xCali</span>
+        <span class="brand-sub">Official Artist Website</span>
+      </div>
+
+      <div class="socials">
+        <a class="pill" href="https://www.instagram.com/2xcali" target="_blank" rel="noopener">Instagram</a>
+        <a class="pill" href="https://www.youtube.com/@official2xcali1502/videos" target="_blank" rel="noopener">YouTube</a>
+        <a class="pill" href="https://open.spotify.com/artist/7C4UHpyOzX5Bt34fuuVkRr" target="_blank" rel="noopener">Spotify</a>
+        <a class="pill" href="https://music.apple.com/us/artist/2xcali/1384316539" target="_blank" rel="noopener">Apple Music</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+  const SUPABASE_URL = "https://ujxuirmeikbzakqaerec.supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_gLnNGeQUUbjLoQlN5g2t9g_XXQpy9P3";
+  const analyticsDb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  let cachedVisitorLocation = null;
+  async function getVisitorLocation(){
+    if(cachedVisitorLocation) return cachedVisitorLocation;
+
+    const fallback = {
+      visitor_country:"",
+      visitor_region:"",
+      visitor_timezone:Intl.DateTimeFormat().resolvedOptions().timeZone || ""
+    };
+
+    try{
+      const res = await fetch("https://ipapi.co/json/");
+      const data = await res.json();
+
+      cachedVisitorLocation = {
+        visitor_country:data.country_name || "",
+        visitor_region:data.region || "",
+        visitor_timezone:data.timezone || fallback.visitor_timezone
+      };
+
+      return cachedVisitorLocation;
+    }catch(e){
+      cachedVisitorLocation = fallback;
+      return cachedVisitorLocation;
+    }
+  }
+
+  const CLIENT_USER_ID = "6d2f86e1-6ac9-42c8-bb74-827dea355a23";
+  const PAGE_NAME = document.title || window.location.pathname;
+
+  async function trackExternalPageView(){
+    const visitorLocation = await getVisitorLocation();
+    await analyticsDb.from("site_analytics_events").insert({
+      client_user_id: CLIENT_USER_ID,
+      page: PAGE_NAME,
+      path: window.location.pathname + window.location.search,
+      referrer: document.referrer || "direct",
+      device: getDeviceType(),
+      browser: getBrowser(),
+      visitor_country:visitorLocation.visitor_country,
+      visitor_region:visitorLocation.visitor_region,
+      visitor_timezone:visitorLocation.visitor_timezone
+    });
+  }
+
+  function setupExternalLeadTracking(){
+    const forms = document.querySelectorAll("form");
+
+    forms.forEach((form,index)=>{
+      if(form.dataset.leadTrackingAttached === "true") return;
+
+      form.dataset.leadTrackingAttached = "true";
+
+      form.addEventListener("submit", async ()=>{
+        const visitorLocation = await getVisitorLocation();
+        const formName =
+          form.getAttribute("name") ||
+          form.getAttribute("id") ||
+          form.dataset.formName ||
+          `Website Form ${index + 1}`;
+
+        await analyticsDb.from("site_leads").insert({
+          client_user_id: CLIENT_USER_ID,
+          page: PAGE_NAME,
+          form_name: formName,
+          source: document.referrer || "direct",
+          visitor_country:visitorLocation.visitor_country,
+          visitor_region:visitorLocation.visitor_region,
+          visitor_timezone:visitorLocation.visitor_timezone
+        });
+      });
+    });
+  }
+
+  function getDeviceType(){
+    const width = window.innerWidth;
+    const ua = navigator.userAgent.toLowerCase();
+
+    if(/iphone|android.*mobile|windows phone/.test(ua)) return "mobile";
+    if(/ipad|tablet|android(?!.*mobile)/.test(ua)) return "tablet";
+    if(width <= 700) return "mobile";
+    if(width <= 1100) return "tablet";
+
+    return "desktop";
+  }
+
+  function getBrowser(){
+    const ua = navigator.userAgent;
+
+    if(ua.includes("Edg")) return "Edge";
+    if(ua.includes("Chrome")) return "Chrome";
+    if(ua.includes("Safari") && !ua.includes("Chrome")) return "Safari";
+    if(ua.includes("Firefox")) return "Firefox";
+
+    return "Other";
+  }
+
+  trackExternalPageView();
+  setupExternalLeadTracking();
+  </script>
+</body>
+</html>
